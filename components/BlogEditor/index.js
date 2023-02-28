@@ -16,6 +16,7 @@ const BlogEditor = ({ post, close, refresh }) => {
     tagline: post.tagline,
     preview: post.preview,
     image: post.image,
+    category: post.category,
   });
 
   const savePost = async () => {
@@ -124,6 +125,20 @@ const BlogEditor = ({ post, close, refresh }) => {
                   setBlogVariables({
                     ...blogVariables,
                     preview: e.target.value,
+                  })
+                }
+                className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
+                type="text"
+              ></textarea>
+            </div>
+            <div className="mt-5 flex flex-col items-center">
+              <label className="w-full text-sx opacity-50">Category</label>
+              <textarea
+                value={blogVariables.category}
+                onChange={(e) =>
+                  setBlogVariables({
+                    ...blogVariables,
+                    category: e.target.value,
                   })
                 }
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
